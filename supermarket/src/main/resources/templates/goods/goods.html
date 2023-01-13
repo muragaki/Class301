@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+<meta charset="UTF-8">
+<title>Goods</title>
+</head>
+<body>
+	<H3>スパーマーケット　商品一覧</H3>
+	<div sec:authorize="${hasRole('ADMIN')}"><a th:href="@{'/admin'}" align="right">管理画面</a></div>
+	<form th:action="@{'/logout'}" method="post">
+		<button>ログアウト</button>
+	</form>
+	<div style="text-align: left;"><a th:href="@{'/cart'}" align="right">🛒カート</a></div>
+	<table border="1">
+		<tr>
+			<th>商品コード</th>
+			<th>商品名</th>
+			<th>単価</th>
+			<th>カート</th>
+		</tr>
+		<tr th:each="item : ${goods}" align="center">
+			<td th:text="${item.itemcode}"></td>
+			<td th:text="${item.itemname}"></td>
+			<td th:text="${item.itemprice}" align="right"></td>
+<!--/*		<td th:text="${item.enableflag}"></td> */-->
+			<td>
+				<form th:action="@{'/cartin'}" method="post">
+					<input type="hidden" name="itemcode" th:value="${item.itemcode}"/>
+					<input type="submit" name="regist" value="カート登録"/>
+				</form>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

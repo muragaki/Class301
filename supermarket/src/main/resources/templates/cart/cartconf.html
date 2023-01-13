@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Crat</title>
+</head>
+<body>
+	<h3>カート画面</h3>
+		<form th:action="@{'/cartconf'}" method="post" th:object="${cartForm}">
+			<table border="1">
+				<tr>
+					<th>商品コード</th>
+					<th>商品名</th>
+					<th>単価</th>
+					<th>個数</th>
+				</tr>
+				<tr th:each="item,stat : *{salesList}" align="center">
+					<td th:text="${item.itemcode}"></td>
+					<td th:text="${item.item.itemname}"></td>
+					<td th:text="${item.item.itemprice}" align="right"></td>
+					<td th:text="${item.sales}" align="right"></td>
+					<input type="hidden" th:field="*{salesList[__${stat.index}__].salesid}" />
+					<input type="hidden" th:field="*{salesList[__${stat.index}__].itemcode}" />
+					<input type="hidden" th:field="*{salesList[__${stat.index}__].item.itemname}" />
+					<input type="hidden" th:field="*{salesList[__${stat.index}__].item.itemprice}" />
+					<input type="hidden" th:field="*{salesList[__${stat.index}__].sales}" />
+				</tr>
+			</table>
+			<p th:text="'合計金額：'+ ${total}"></p>
+			<input type="submit" name="order" value="確認"/>
+		</form>
+</body>
+</html>

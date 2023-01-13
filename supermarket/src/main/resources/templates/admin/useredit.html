@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>User Edit</title>
+</head>
+<body>
+	<h3>ユーザー情報変更</h3>
+	<a th:href="@{/admin/userlist}">ユーザー一覧へ戻る</a>
+	<form th:action="@{/admin/editconf}" method="post" th:object="${userForm}">
+		<table>
+			<tr>
+				<td>ユーザ名：</td>
+				<td>
+					<input type="text" name="username" th:value="${userForm.username}" th:readonly="true" />
+					<span th:errors="*{username}" style="color:red"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>性(Last Name)：</td>
+				<td>
+					<input type="text" name="lastname" th:value="${userForm.lastname}" />
+					<span th:errors="*{lastname}" style="color:red"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>名(First Name)：</td>
+				<td>
+					<input type="text" name="firstname" th:value="${userForm.firstname}" />
+					<span th:errors="${userForm.firstname}" style="color:red"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>ユーザ権限：</td>
+				<td>
+					<select name="rolename" th:field="${userForm.rolename}">
+						<option th:each="role : ${userForm.roleNameList}"
+								th:value="${role.value}"
+								th:text="${role.text}"></option>
+					</select>
+					<input type="hidden" th:field="${userForm.roleNameList}" />
+				</td>
+			</tr>
+		</table>
+		<button type="submit">登録</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Admin Menu</title>
+</head>
+<body>
+	<h3>管理者メニュー</h3>
+	<ul>
+		<li><a th:href="@{'/admin/newuser'}">新規ユーザ登録</a></li>
+		<li><a th:href="@{'/admin/userlist'}">ユーザ一覧</a></li>
+		<li><a th:href="@{'/admin/goodslist'}">商品一覧</a></li>
+		<li><a th:href="@{'/goods'}">購入画面に戻る</a></li>
+	</ul>
+</body>
+</html>

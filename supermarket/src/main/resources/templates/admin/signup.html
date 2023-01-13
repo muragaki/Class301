@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>New User Registed</title>
+</head>
+<body>
+	<h3>ユーザー登録確認</h3>
+		<table>
+			<tr>
+				<td>ユーザ名：</td>
+				<td><span th:text="${userForm.username}" /></td>
+			</tr>
+			<tr>
+				<td>パスワード：</td>
+				<td>********</td>
+			</tr>
+			<tr>
+				<td>性(Last Name)：</td>
+				<td><span th:text="${userForm.lastname}" /></td>
+			</tr>
+			<tr>
+				<td>名(First Name)：</td>
+				<td><span th:text="${userForm.firstname}" /></td>
+			</tr>
+			<tr>
+				<td>ユーザ権限：</td>
+				<td><span th:text="${userForm.rolename}" /></td>
+			</tr>
+		</table>
+	<a th:href="@{/admin}">管理者メニューへ戻る</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>UserList</title>
+</head>
+<body>
+	<h3>ユーザ一覧</h3>
+	<a th:href="@{/admin}">管理者メニューに戻る</a>
+	<table border="1">
+		<tr>
+			<th>ユーザ名</th>
+			<th>姓(Last Name)</th>
+			<th>名(First Name)</th>
+			<th>ユーザ権限</th>
+			<th>編集</th>
+		</tr>
+		<tr th:each="user : ${userlist}">
+			<td th:text="${user.userId}"></td>
+			<td th:text="${user.lastName}"></td>
+			<td th:text="${user.firstName}"></td>
+			<td th:text="${user.roleName}"></td>
+			<td>
+				<form th:action="@{/admin/edit}" method="get">
+					<input type="hidden" name="userId" th:value="${user.userId}"/>
+					<input type="submit" name="edit" value="編集" />
+				</form>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

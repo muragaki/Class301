@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>New User</title>
+</head>
+<body>
+	<h3>新規ユーザー登録</h3>
+	<a th:href="@{/admin}">管理者メニューへ戻る</a>
+	<form th:action="@{/admin/signup}" method="post" th:object="${userForm}">
+		<table>
+			<tr>
+				<td>ユーザ名：</td>
+				<td>
+					<input type="text" name="username" th:field="${userForm.username}" />
+					<span th:errors="*{username}" style="color:red"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>パスワード：</td>
+				<td>
+					<input type="password" name="password" th:field="${userForm.password}" />
+					<span th:errors="*{password}" style="color:red"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>性(Last Name)：</td>
+				<td>
+					<input type="text" name="lastname" th:field="${userForm.lastname}" />
+					<span th:errors="*{lastname}" style="color:red"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>名(First Name)：</td>
+				<td>
+					<input type="text" name="firstname" th:field="${userForm.firstname}" />
+					<span th:errors="*{firstname}" style="color:red"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>ユーザ権限：</td>
+				<td>
+					<select name="rolename">
+						<option th:each="role : ${userForm.roleNameList}"
+								th:value="${role.value}"
+								th:text="${role.text}">ADMIN</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<button type="submit">登録</button>
+	</form>
+</body>
+</html>

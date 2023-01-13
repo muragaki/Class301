@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Item Edit conf</title>
+</head>
+<body>
+	<h3>商品情報変更</h3>
+	<a th:href="@{/admin/goodslist}">商品一覧へ戻る</a>
+	<table>
+		<tr>
+			<td>商品コード：</td>
+			<td><span th:text="${itemEditForm.itemcode}"></span></td>
+		</tr>
+		<tr>
+			<td>商品名：</td>
+			<td><span th:text="${itemEditForm.itemname}"></span></td>
+		</tr>
+		<tr>
+			<td>単価：</td>
+			<td><span th:text="${itemEditForm.itemprice}"></span></td>
+		</tr>
+		<tr>
+			<td>無効フラグ：</td>
+			<td><sapn th:text="${itemEditForm.enableflag}"></sapn></td>
+		</tr>
+	</table>
+</body>
+</html>

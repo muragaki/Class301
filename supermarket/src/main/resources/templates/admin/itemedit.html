@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Item Edit</title>
+</head>
+<body>
+	<h3>商品情報変更</h3>
+	<a th:href="@{/admin/goodslist}">商品一覧へ戻る</a>
+	<form th:action="@{/admin/itemeditconf}" method="post" th:object="${itemEditForm}">
+		<table>
+			<tr>
+				<td>商品コード：</td>
+				<td>
+					<input type="text" name="itemcode" th:value="${itemEditForm.itemcode}" th:readonly="true" />
+					<span th:errors="*{itemcode}" style="color:red"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>商品名：</td>
+				<td>
+					<input type="text" name="itemname" th:value="${itemEditForm.itemname}" />
+					<span th:errors="*{itemname}" style="color:red"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>単価：</td>
+				<td>
+					<input type="text" name="itemprice" th:value="${itemEditForm.itemprice}" />
+					<span th:errors="*{itemprice}" style="color:red"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>無効フラグ：</td>
+				<td>
+					<input type="checkbox" name="enableflag" th:field="${itemEditForm.enableflag}" />
+				</td>
+			</tr>
+		</table>
+		<button type="submit">登録</button>
+	</form>
+</body>
+</html>

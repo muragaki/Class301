@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>GoodsList</title>
+</head>
+<body>
+	<h3>商品一覧</h3>
+	<a th:href="@{/admin}">管理者メニューに戻る</a>
+	<table border="1">
+		<tr>
+			<th>商品コード</th>
+			<th>商品名</th>
+			<th>　単価　</th>
+			<th>無効</th>
+			<th>編集</th>
+		</tr>
+		<tr th:each="item : ${goodsList}">
+			<td th:text="${item.itemcode}"></td>
+			<td th:text="${item.itemname}"></td>
+			<td th:text="${item.itemprice}" align="right"></td>
+			<td th:text="${item.enableflag}"></td>
+			<td>
+				<form th:action="@{/admin/itemedit}" method="get">
+					<input type="hidden" name="itemcode" th:value="${item.itemcode}" />
+					<input type="submit" name="edit" value="編集" />
+				</form>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

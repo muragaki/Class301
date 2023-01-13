@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>User Edit conf</title>
+</head>
+<body>
+	<h3>ユーザー情報変更</h3>
+	<a th:href="@{/admin/userlist}">ユーザ一覧へ戻る</a>
+	<table>
+		<tr>
+			<td>ユーザ名：</td>
+			<td><span th:text="${userForm.username}"></span></td>
+		</tr>
+		<tr>
+			<td>性(Last Name)：</td>
+			<td><span th:text="${userForm.lastname}"></span></td>
+		</tr>
+		<tr>
+			<td>名(First Name)：</td>
+			<td><span th:text="${userForm.firstname}"></span></td>
+		</tr>
+		<tr>
+			<td>ユーザ権限：</td>
+			<td><sapn th:text="${userForm.rolename}"></sapn></td>
+		</tr>
+	</table>
+</body>
+</html>
