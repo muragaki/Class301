@@ -9,6 +9,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * ユーザーホーム
+ * 
+ * @author oheakemi
+ *
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -19,7 +18,13 @@ import com.example.supermarket.domain.model.RoleName;
 import com.example.supermarket.domain.model.User;
 import com.example.supermarket.domain.service.goods.GoodsService;
 import com.example.supermarket.domain.service.user.SuperUserDetailsService;
-@Controller
+
+/**
+ * 管理者用コントローラー
+ * 
+ * @author oheakemi
+ *
+ */
 public class AdminController {
 	
 	@Autowired
