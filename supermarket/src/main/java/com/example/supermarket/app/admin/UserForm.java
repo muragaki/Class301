@@ -9,6 +9,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * ユーザフォーム
+ * 
+ * @author Mito
+ *
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
