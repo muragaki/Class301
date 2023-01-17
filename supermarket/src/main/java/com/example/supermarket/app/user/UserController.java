@@ -13,6 +13,11 @@ import com.example.supermarket.domain.model.RoleName;
 import com.example.supermarket.domain.model.User;
 import com.example.supermarket.domain.service.user.SuperUserDetailsService;
 
+/**
+ * ユーザーコントローラー
+ * 
+ * @author Yamaura
+ */
 @Controller
 public class UserController {
 	

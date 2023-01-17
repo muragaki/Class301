@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.supermarket.domain.service.goods.GoodsService;
 
+/**
+ * 
+ * @author Mito
+ * GoodsControllerにコメントしました。
+ *
+ */
 @Controller
 public class GoodsController {
 	@Autowired
