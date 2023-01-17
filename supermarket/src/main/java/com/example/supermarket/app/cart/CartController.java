@@ -17,6 +17,12 @@ import com.example.supermarket.domain.model.Sales;
 import com.example.supermarket.domain.service.cart.CartService;
 import com.example.supermarket.domain.service.user.SuperUserDetails;
 
+/**
+ * カートコントローラー
+ * 
+ * @author ohe
+ *
+ */
 @Controller
 public class CartController {
 	
