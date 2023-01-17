@@ -11,7 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /*
- * ユーザー
+ * ユーザー登録
  * 
  * @author Kaneda
  */
