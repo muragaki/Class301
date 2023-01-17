@@ -14,5 +14,5 @@ import com.example.supermarket.domain.model.MItem;
  */
 public interface GoodsRepository extends JpaRepository<MItem, String> {
 	List<MItem> findAllByOrderByItemcode();
-
+	List<MItem> findAllByEnableflagFalseOrderByItemcode();
 }

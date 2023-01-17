@@ -110,7 +110,8 @@ public class AdminController {
 	
 	@RequestMapping("admin/goodslist")
 	String goodslist(Model model) {
-		List<MItem> goodslist = goodsService.findGoods();
+		// List<MItem> goodslist = goodsService.findGoods();
+		List<MItem> goodslist = goodsService.findGoodsAll();
 		model.addAttribute("goodsList", goodslist);
 		return "admin/goodslist";
 	}

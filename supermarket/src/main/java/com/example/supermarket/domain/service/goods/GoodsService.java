@@ -24,9 +24,13 @@ public class GoodsService {
 	GoodsRepository goodsRepository;
 	
 	public List<MItem> findGoods() {
-		return goodsRepository.findAllByOrderByItemcode();
+		return goodsRepository.findAllByEnableflagFalseOrderByItemcode();
 	}
 	
+	public List<MItem> findGoodsAll() {
+		return goodsRepository.findAllByOrderByItemcode();
+	}
+
 	public MItem findItem(String itemcode) {
 		return goodsRepository.findById(itemcode).get();
 	}
