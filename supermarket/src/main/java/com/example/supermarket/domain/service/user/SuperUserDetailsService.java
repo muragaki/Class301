@@ -13,7 +13,7 @@ import com.example.supermarket.domain.model.User;
 import com.example.supermarket.domain.repository.user.UserRepository;
 
 /**
- * 顧客詳細サービス的な？
+ * コメントを追加
  * 
  * @author Muragaki
  * 
