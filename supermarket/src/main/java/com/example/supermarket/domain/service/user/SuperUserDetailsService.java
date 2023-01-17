@@ -12,6 +12,14 @@ import org.springframework.stereotype.Service;
 import com.example.supermarket.domain.model.User;
 import com.example.supermarket.domain.repository.user.UserRepository;
 
+/**
+ * コメントを追加
+ * 
+ * @author Muragaki
+ * 
+ */
+
+
 @Service
 public class SuperUserDetailsService implements UserDetailsService {
 	@Autowired
