@@ -8,12 +8,6 @@ import org.springframework.stereotype.Service;
 import com.example.supermarket.domain.model.Sales;
 import com.example.supermarket.domain.repository.cart.SalesRepository;
 
-/**
- * カートサービス
- * 
- * @author Muragaki
- *
- */
 @Service
 public class CartService {
 	
