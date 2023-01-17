@@ -10,6 +10,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/*
+ * ユーザー
+ * 
+ * @author Kaneda
+ */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
