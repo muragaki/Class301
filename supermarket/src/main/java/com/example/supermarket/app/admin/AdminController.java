@@ -19,6 +19,7 @@ import com.example.supermarket.domain.model.RoleName;
 import com.example.supermarket.domain.model.User;
 import com.example.supermarket.domain.service.goods.GoodsService;
 import com.example.supermarket.domain.service.user.SuperUserDetailsService;
+
 @Controller
 public class AdminController {
 	
