@@ -12,6 +12,7 @@ import jakarta.transaction.Transactional;
 
 /**
  * 商品サービス.
+ * 2023.1.17
  * 
  * @author Murahgaki
  *

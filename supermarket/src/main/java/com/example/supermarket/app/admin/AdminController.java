@@ -20,6 +20,13 @@ import com.example.supermarket.domain.model.User;
 import com.example.supermarket.domain.service.goods.GoodsService;
 import com.example.supermarket.domain.service.user.SuperUserDetailsService;
 
+
+/**
+ * 管理者コントローラ
+ * 
+ * @author Mito
+ *
+ */
 @Controller
 public class AdminController {
 	
